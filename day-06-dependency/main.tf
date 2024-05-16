@@ -1,13 +1,15 @@
-resource "aws_instance" "song" {
+resource "aws_instance" "ram" {
     ami = "ami-0cc9838aa7ab1dce7"
-    instance_type = "t2.micro"
-    key_name = "keypair"
+    instance_type ="t2.micro"
+    key_name =  "keypair"
     tags = {
-      Name="ram"
+      Name="mitha"
     }
+
   
 }
-resource "aws_s3_bucket" "song" {
-    bucket = "fghertyvbnm"
+resource "aws_s3_bucket" "box" {
+    bucket = "dfghjrtyuivbn"
+    depends_on = [ aws_instance.ram ]
   
 }
